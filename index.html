@@ -1,93 +1,140 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>California 2016</title>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="shortcut icon" href="assets/images/bear.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
-  
+  <title>CA2016</title>
+  <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background:#ffc600;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
 
-  <nav class="navbar navbar-default">
-    <div class="container top">
-      <div class="navbar-header">
-        <a class="navbar-brand" id ="wbc" href="index.html">California 2016</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="primary_nav"><a href="itinerary.html" id="itinerary">Itinerary</a></li>
-        <li class="primary_nav"><a href="images.html" id="images">Images</a></li>
-      </ul>
+    .panels {
+      min-height:100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background:#6B0F9C;
+      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+      color:white;
+      text-align: center;
+      align-items:center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size:cover;
+      background-position:center;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .panel1 { background-image:url(assets/images/crops/1.jpg); }
+    .panel2 { background-image:url(assets/images/crops/2.jpg); }
+    .panel3 { background-image:url(assets/images/crops/3.jpg); }
+    .panel4 { background-image:url(assets/images/crops/4.jpg); }
+    .panel5 { background-image:url(assets/images/crops/5.jpg); }
+
+    /* Flex Items */
+    .panel > * {
+      margin:0;
+      width: 100%;
+      transition:transform 0.5s;
+      flex: 1 0 auto;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Fugaz One', cursive;
+      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size:40px;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Hey</p>
+      <p>Let's</p>
+      <p>Dance</p>
     </div>
-  </nav>
-  
-  <div class="container main">
-    
-    <div class="row">
-    
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="assets/images/1.jpg" class="img-responsive" alt="Responsive image">
-          <div class="caption">
-            <h3>Billy + Lochlan</h3>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="assets/images/2.jpg" class="img-responsive" alt="Responsive image">
-          <div class="caption">
-            <h3>The whole crew on the trolley</h3>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="panel panel2">
+      <p>Give</p>
+      <p>Take</p>
+      <p>Receive</p>
     </div>
-
-    <div class="row">
-    
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="assets/images/3.jpg" class="img-responsive" alt="Responsive image">
-          <div class="caption">
-            <h3>Jacqueline + Billy in the clouds</h3>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img src="assets/images/4.jpg" class="img-responsive" alt="Responsive image">
-          <div class="caption">
-            <h3>Loch, the conductor</h3>
-            <p>...</p>
-          </div>
-        </div>
-      </div>
-      
+    <div class="panel panel3">
+      <p>Experience</p>
+      <p>It</p>
+      <p>Today</p>
     </div>
-
+    <div class="panel panel4">
+      <p>Give</p>
+      <p>All</p>
+      <p>You can</p>
+    </div>
+    <div class="panel panel5">
+      <p>Life</p>
+      <p>In</p>
+      <p>Motion</p>
+    </div>
   </div>
 
-  <div class="footer navbar-bottom">
-    <footer>
-      © Copyright 2017 William Chandler
-    </footer>
-  </div>
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      console.log('Hello');
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
 
 </body>
-
 </html>
