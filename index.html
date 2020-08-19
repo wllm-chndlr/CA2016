@@ -14,9 +14,11 @@
       font-size: 20px;
       font-weight: 200;
     }
+
     body {
       margin: 0;
     }
+
     *, *:before, *:after {
       box-sizing: inherit;
     }
@@ -48,12 +50,11 @@
       flex-direction: column;
     }
 
-
-    .panel1 { background-image:url(assets/images/crops/1.jpg); }
-    .panel2 { background-image:url(assets/images/crops/2.jpg); }
-    .panel3 { background-image:url(assets/images/crops/3.jpg); }
-    .panel4 { background-image:url(assets/images/crops/4.jpg); }
-    .panel5 { background-image:url(assets/images/crops/5.jpg); }
+    .panel1 { background-image:url(assets/images/1.jpg); }
+    .panel2 { background-image:url(assets/images/2.jpg); }
+    .panel3 { background-image:url(assets/images/3.jpg); }
+    .panel4 { background-image:url(assets/images/4.jpg); }
+    .panel5 { background-image:url(assets/images/5.jpg); }
 
     /* Flex Items */
     .panel > * {
@@ -77,6 +78,7 @@
       text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
     }
+
     .panel p:nth-child(2) {
       font-size: 4em;
     }
@@ -85,9 +87,7 @@
       flex: 5;
       font-size:40px;
     }
-
   </style>
-
 
   <div class="panels">
     <div class="panel panel1">
@@ -121,12 +121,10 @@
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen() {
-      console.log('Hello');
       this.classList.toggle('open');
     }
 
     function toggleActive(e) {
-      console.log(e.propertyName);
       if (e.propertyName.includes('flex')) {
         this.classList.toggle('open-active');
       }
@@ -135,6 +133,5 @@
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
-
 </body>
 </html>
